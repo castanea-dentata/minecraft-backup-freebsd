@@ -2,7 +2,7 @@
 [![CI](https://github.com/nicolaschan/minecraft-backup/actions/workflows/ci.yml/badge.svg)](https://github.com/nicolaschan/minecraft-backup/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/nicolaschan/minecraft-backup/branch/master/graph/badge.svg?token=LCbVC4TbYJ)](https://codecov.io/gh/nicolaschan/minecraft-backup)
 
-Backup script for Minecraft servers on FreeBSD, altered backup.sh with proper commands for the du command, which has different option names than the linux version. Have only tested this on FreeBSD-14.2-RELEASE=p1 with screen.
+Backup script for Minecraft servers on FreeBSD, altered backup.sh with proper commands for the du command, which has different option names than the linux version. Have only tested this on FreeBSD-14.2-RELEASE-p1 with screen.
 Supports servers running in [screen](https://en.wikipedia.org/wiki/GNU_Screen), [tmux](https://en.wikipedia.org/wiki/Tmux), or with [RCON](https://wiki.vg/RCON) enabled. Supports `tar` file or [`restic`](https://restic.net/) backup backends.
 
 ## Features

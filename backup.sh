@@ -452,8 +452,8 @@ clean-up () {
   TIME_DELTA=$((END_TIME - START_TIME))
 
   if [[ "$BACKUP_DIRECTORY" != "" ]]; then
-    WORLD_SIZE_BYTES=$(du -A -B 1 -c -s "${SERVER_WORLDS[@]}" | tail -n 1 | awk '{print $1}')
-    ARCHIVE_SIZE_BYTES=$(du -A -B 1 "$ARCHIVE_PATH" | awk '{print $1}')
+    WORLD_SIZE_BYTES=$(du -s -k "${SERVER_WORLDS[@]}" | awk '{sum+=$1} END{print sum*1024}')
+    ARCHIVE_SIZE_BYTES=$(stat -f %z "$ARCHIVE_PATH")
     ARCHIVE_SIZE=$(du -h "$ARCHIVE_PATH" | awk '{print $1}')
     BACKUP_DIRECTORY_SIZE=$(du -h -s "$BACKUP_DIRECTORY" | awk '{print $1}')
 

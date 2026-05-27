@@ -318,19 +318,19 @@ delete-sequentially () {
 is-hourly-backup () {
   local TIMESTAMP=$*
   local MINUTE
-  MINUTE=$(date -d "$TIMESTAMP" +%M)
+  MINUTE=$(date -j -f "%Y-%m-%d %H:%M:%S" "$TIMESTAMP" +%M)
   return "$MINUTE"
 }
 is-daily-backup () {
   local TIMESTAMP=$*
   local HOUR
-  HOUR=$(date -d "$TIMESTAMP" +%H)
+  HOUR=$(date -j -f "%Y-%m-%d %H:%M:%S" "$TIMESTAMP" +%H)
   return "$HOUR"
 }
 is-weekly-backup () {
   local TIMESTAMP=$*
   local DAY
-  DAY=$(date -d "$TIMESTAMP" +%u)
+  DAY=$(date -j -f "%Y-%m-%d %H:%M:%S" "$TIMESTAMP" +%u)
   return "$((DAY - 1))"
 }
 
